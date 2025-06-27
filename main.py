@@ -14,7 +14,22 @@ class LinkedList:
     self.card_yellow = 201
     
   def inserirSemPrioridade (self, nodo):
-    pass
+    current_node = self.head
+    while True:
+      if current_node.next is not None:
+        current_node = current_node.next
+      else:
+        current_node.next = nodo
+        break
+      
+  def imprimirListaEspera(self):
+    current_node  = self.head
+    todos_pacientes = []
+    while current_node is not None:
+      todos_pacientes.append(str(current_node))
+      current_node = current_node.next
+    print(f'Lista -> {" ".join(todos_pacientes)}')
+    
   def inserir(self):
     numero_do_paciente = None
     color = str(input("Informe a cor do cartão (A/V): ")).upper()
@@ -30,11 +45,9 @@ class LinkedList:
     
     if self.head is None:
       self.head = nodo
-    if color == 'V':
+    elif color == 'V':
       self.inserirSemPrioridade(nodo)
 
-
-  
 novo_paciente = LinkedList()
     
 while True:
@@ -44,5 +57,7 @@ while True:
   option_user = int(input(">> "))
   if option_user == 1:
     novo_paciente.inserir()
+  elif option_user == 2:
+    novo_paciente.imprimirListaEspera()
   else:
     break
