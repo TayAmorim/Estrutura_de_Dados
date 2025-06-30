@@ -40,15 +40,6 @@ class LinkedList:
         else:
           current_node = current_node.next
           
-      
-  def imprimirListaEspera(self):
-    current_node  = self.head
-    todos_pacientes = []
-    while current_node is not None:
-      todos_pacientes.append(str(current_node))
-      current_node = current_node.next
-    print(f'Lista -> {" ".join(todos_pacientes)}')
-    
   def inserir(self):
     numero_do_paciente = None
     color = str(input("Informe a cor do cartão (A/V): ")).upper()
@@ -67,18 +58,34 @@ class LinkedList:
     elif color == 'V':
       self.inserirSemPrioridade(nodo)
     elif color == 'A':
-      self.inserirComPrioridade(nodo)
+      self.inserirComPrioridade(nodo)  
+  
+  def imprimirListaEspera(self):
+    current_node  = self.head
+    todos_pacientes = []
+    while current_node is not None:
+      todos_pacientes.append(str(current_node))
+      current_node = current_node.next
+    print(f'Lista -> {" ".join(todos_pacientes)}')
+  
+  def chamarPaciente(self):
+    print(f"Atendendo o paciente cartão {self.head.color} e número {self.head.id_number}")
+    self.head = self.head.next
+
 
 novo_paciente = LinkedList()
     
 while True:
   print("1 - Adicionar paciente a fila")
   print("2 - Mostrar pacientes na fila")
-  print(f"3 - Chamar paciente\n")
+  print("3 - Chamar paciente")
+  print(f"4 - Sair\n")
   option_user = int(input(">> "))
   if option_user == 1:
     novo_paciente.inserir()
   elif option_user == 2:
     novo_paciente.imprimirListaEspera()
-  else:
+  elif option_user == 3:
+    novo_paciente.chamarPaciente()
+  elif option_user == 4:
     break
