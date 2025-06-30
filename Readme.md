@@ -35,7 +35,7 @@ Criação de um sistema de emplacamento de veículos para o Distrito Federal, on
 
 **Detalhes da Tabela Hash:**
 
-* [cite_start]Tabela com 10 posições [0 a 9](cite: 54).
+* [cite_start]Tabela com 10 posições [0 a 9].
 * [cite_start]Cada posição do vetor é uma Lista Encadeada Simples.
 * [cite_start]O Nodo da Lista Encadeada representa um Estado com `sigla`, `nomeEstado` e `próximo`.
 * [cite_start]A inserção nas listas encadeadas é sempre no início.
@@ -59,10 +59,17 @@ Criação de um sistema de emplacamento de veículos para o Distrito Federal, on
 
 1. **Pré-requisitos:** Certifique-se de ter o Python (preferencialmente 3.x) instalado em sua máquina.
 2. **Executar o Script:**
+  a. Para executar a Questão 1: Lista Encadeada
 
-    ```bash
-    python main.py
-    ```
+   ```bash
+   python SimpleList.py
+   ```
+
+  b. Para executar a Questão 2: Tabela Hash
+
+   ```bash
+   python HashTable.py
+   ```
 
 ## Instruções de Uso
 
